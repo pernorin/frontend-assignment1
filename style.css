@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@900&family=Josefin+Sans:wght@400;700&display=swap');
+
+/* 
+font-family: 'Crimson Pro', serif;
+font-family: 'Josefin Sans', sans-serif;
+*/
+
+:root {
+	--primary: hsl(142, 25%, 66%);
+	--whiteish: hsl(142, 25%, 95%);
+	--blackish: hsl(142, 10%, 10%);
+	--primary-light: hsl(142, 25%, 78%);
+	--primary-dark: hsl(142, 25%, 54%);
+	--primary-darker: hsl(142, 25%, 37%);
+	--primary-darkest: hsl(142, 25%, 28%);
+}
+
+/* Global: */
+body {
+	display: grid;
+	grid-template-rows: 10rem 10rem 1fr 3rem;
+	grid-template-columns: minmax(300px, 599px);
+	height: 100vh;
+	margin: 0;
+	background-color: var(--primary);
+	font-family: 'Josefin Sans', sans-serif;
+	color: var(--blackish);
+}
+p,
+dd {
+	line-height: 1.5;
+}
+@media only screen and (min-width: 600px) {
+	body {
+		grid-template: 10rem 1fr 3rem / 300px 1fr;
+	}
+}
+header {
+	text-align: center;
+	border-bottom: 4px solid var(--blackish);
+}
+@media only screen and (min-width: 600px) {
+	header {
+		grid-column: 1/3;
+		padding: 2rem;
+	}
+}
+header h1 {
+	font-size: 5rem;
+	font-family: 'Crimson Pro', serif;
+	margin: 0;
+	padding: 0;
+}
+@media only screen and (min-width: 450px) {
+	header h1 {
+		font-size: 6rem;
+	}
+}
+nav {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+@media only screen and (min-width: 600px) {
+	nav {
+		height: 100%;
+		flex-direction: column;
+		align-content: center;
+	}
+	aside {
+		border-right: 4px solid var(--blackish);
+	}
+}
+nav a {
+	font-size: 1.5rem;
+	text-decoration: none;
+	border: 4px solid var(--blackish);
+	padding: 0.75rem;
+	margin: 40px 0;
+	text-align: center;
+	color: var(--blackish);
+}
+nav a:hover,
+nav a:focus {
+	background-color: var(--primary-dark);
+}
+nav a:active {
+	background-color: var(--primary-darkest);
+}
+@media only screen and (min-width: 450px) {
+	nav a {
+		margin: 40px 30px;
+	}
+}
+.active,
+.active:hover {
+	background-color: var(--primary-darker);
+	color: var(--whiteish);
+}
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-items: center;
+	height: 100%;
+}
+@media only screen and (min-width: 1400px) {
+	main {
+		flex-direction: row;
+		justify-content: space-evenly;
+		margin-right: 10vw;
+	}
+}
+footer {
+	padding: 1rem 0;
+	width: 100vw;
+	border-top: 4px solid var(--blackish);
+}
+footer .footer-content {
+	margin: auto;
+	width: 20rem;
+	font-size: 0.75rem;
+}
+
+/* index: */
+.img-box {
+	border: 3px solid var(--blackish);
+	background-color: var(--whiteish);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px;
+	max-width: 400px;
+	margin: auto;
+}
+@media only screen and (min-width: 600px) {
+	.img-box {
+		margin: 32px auto;
+		max-width: 250px;
+	}
+}
+@media only screen and (min-width: 1400px) {
+	.img-box {
+		max-width: 400px;
+	}
+}
+.img-box img {
+	max-width: 100%;
+	object-fit: contain;
+}
+.img-box p {
+	font-size: 2rem;
+	font-weight: 700;
+}
+.front-page-text {
+	max-width: 400px;
+	margin: 32px auto;
+	padding: 0 16px;
+}
+@media only screen and (min-width: 1400px) {
+	.front-page-text {
+		margin-right: auto;
+		margin-left: 32px;
+	}
+}
+
+/* Portfolio: */
+.portfolio-container {
+	margin-top: 32px;
+	padding: 0 16px;
+}
+@media only screen and (min-width: 600px) {
+	.portfolio-container {
+		margin-top: 95px;
+	}
+}
+@media only screen and (min-width: 1400px) {
+	.portfolio-container {
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+}
+.projects-box {
+	max-width: 450px;
+}
+.projects-box dt {
+	text-decoration: underline;
+	font-size: 1.2rem;
+}
+.projects-box dd {
+	margin-left: 1rem;
+}
+.skills-box {
+	max-width: 450px;
+	padding-bottom: 2rem;
+}
+.skills-box table {
+	border: 3px solid var(--blackish);
+	border-collapse: collapse;
+}
+.skills-box th {
+	border: 1px solid var(--blackish);
+	border-bottom: 3px solid var(--blackish);
+	padding: 0.5rem;
+}
+.skills-box td {
+	border: 1px solid var(--blackish);
+	padding: 0.25rem;
+}
+.skills-box td ~ td {
+	text-align: center;
+}
+
+/* Kontakt: */
+.map-box {
+	max-width: 100%;
+}
+@media only screen and (min-width: 600px) {
+	.map-box {
+		margin-top: 95px;
+	}
+}
+.link-box {
+	display: flex;
+	flex-direction: column;
+	font-size: 2rem;
+}
+.link-box a {
+	text-decoration: none;
+	color: black;
+	margin: 1rem 0;
+}
+.link-box .bi {
+	padding-right: 1rem;
+}
